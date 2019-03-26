@@ -39,7 +39,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class Withes_Screw_Pilot: Crew
 		{
-			file = "\AerialScrew\anim\pilot_anim.rtm";
+			file = "\AerialScrew\anim\Withes_Screw_Pilot.rtm";
 		};
 	};
 };
@@ -49,15 +49,14 @@ class CfgVehicles {
     class ViewPilot;
     class Withes_Screw: Heli_Light_01_base_F {
         armor = 200;
-        altFullForce = 100; /// in what height do the engines still have full thrust
-        altNoForce = 5; /// thrust of the engines interpolates to zero between altFullForce and altNoForce
-        maxSpeed = 50; /// what is the maximum speed of the vehicle
-        maxFordingDepth = 99; /// how deep could the vehicle be in water without getting some damage
+        altFullForce = 900; /// in what height do the engines still have full thrust
+        altNoForce = 1800; /// thrust of the engines interpolates to zero between altFullForce and altNoForce
+        maxSpeed = 200; /// what is the maximum speed of the vehicle
+        maxFordingDepth = 1; /// how deep could the vehicle be in water without getting some damage
         hasDriver = true;	// default
         hasGunner = false;	// default
         hasCommander = false;	// default
-        hasCoPilot = false;
-        mainBladeRadius = 0; /// describes the radius of main rotor - used for collision detection	
+        mainBladeRadius = 3; /// describes the radius of main rotor - used for collision detection	
         //multiplier of body friction
         bodyFrictionCoef = 0.1;
         //multiplier of dive force
@@ -65,12 +64,12 @@ class CfgVehicles {
         //multiplier of back rotor force
         backRotorForceCoef = 1.0;
         transportSoldier = 0;
-        startDuration = 2;
+        startDuration = 8;
         cargoCanEject = 1; 
         driverCanEject = 1; 
         precisegetinout = 0;
         helmetMountedDisplay = 0;
-        getInRadius = 20;
+        getInRadius = 15;
         driverAction = "Withes_Screw_Pilot";
 		driverInAction = "Withes_Screw_Pilot";
         maximumLoad = 1000;
