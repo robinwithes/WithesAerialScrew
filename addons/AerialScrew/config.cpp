@@ -1,7 +1,7 @@
 class CfgPatches {
-    class Withes_Umbrella_Patch {
+    class Withes_Screw_Patch {
         units[] = {
-            "Withes_Umbrella"
+            "Withes_Screw"
         };
         weapons[] = {};
         requiredVersion = 0.100000;
@@ -16,7 +16,7 @@ class CfgMovesBasic
 	class DefaultDie;
 	class ManActions
 	{
-		Withes_Umbrella_Pilot = "Withes_Umbrella_Pilot";
+		Withes_Screw_Pilot = "Withes_Screw_Pilot";
 	};
 	class Actions
 	{
@@ -37,9 +37,9 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		{
 			head = "headNo";
 		};
-		class Withes_Umbrella_Pilot: Crew
+		class Withes_Screw_Pilot: Crew
 		{
-			file = "\umbrella\anim\pilot_anim.rtm";
+			file = "\AerialScrew\anim\pilot_anim.rtm";
 		};
 	};
 };
@@ -47,11 +47,11 @@ class CfgMovesMaleSdr: CfgMovesBasic
 class CfgVehicles {
     class Heli_Light_01_base_F;
     class ViewPilot;
-    class Withes_Umbrella: Heli_Light_01_base_F {
-        armor = 100;
+    class Withes_Screw: Heli_Light_01_base_F {
+        armor = 200;
         altFullForce = 100; /// in what height do the engines still have full thrust
         altNoForce = 5; /// thrust of the engines interpolates to zero between altFullForce and altNoForce
-        maxSpeed = 80; /// what is the maximum speed of the vehicle
+        maxSpeed = 50; /// what is the maximum speed of the vehicle
         maxFordingDepth = 99; /// how deep could the vehicle be in water without getting some damage
         hasDriver = true;	// default
         hasGunner = false;	// default
@@ -66,22 +66,21 @@ class CfgVehicles {
         backRotorForceCoef = 1.0;
         transportSoldier = 0;
         startDuration = 2;
-        cargoCanEject = 1; /// cargo should be able to grab a chute and drop out of the vehicle
-        driverCanEject = 1; /// pilot shouldn't be able to do so as he doesn't have eject seat
+        cargoCanEject = 1; 
+        driverCanEject = 1; 
         precisegetinout = 0;
         helmetMountedDisplay = 0;
-        getInRadius = 5;
-        driverAction = "Withes_Umbrella_Pilot";
-		driverInAction = "Withes_Umbrella_Pilot";
-        maximumLoad = 0;
-        accuracy = 1000; //Makes the heli hart to detect by AI, because it flies and stuff
+        getInRadius = 20;
+        driverAction = "Withes_Screw_Pilot";
+		driverInAction = "Withes_Screw_Pilot";
+        maximumLoad = 1000;
         scope = 2;
         author = "Robin Withes";
-        _generalMacro = "Withes_Umbrella";
-        displayname = "Umbrella";
-        model = "\umbrella\model\Umbrella.p3d";
+        _generalMacro = "Withes_Screw";
+        displayname = "Aerial Screw";
+        model = "\AerialScrew\model\screw.p3d";
         class Library {
-            libTextDesc = "A umbrella, that can fly.. Kind of.";
+            libTextDesc = "A famous contraption by Leonardo Da Vinci!";
         };
         class MFD{};
 		class TransportBackpacks{};
