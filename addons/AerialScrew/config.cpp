@@ -77,9 +77,9 @@ class CfgVehicles {
         author = "Robin Withes";
         _generalMacro = "Withes_Screw";
         displayname = "Aerial Screw";
-        model = "\AerialScrew\model\screw.p3d";
+        model = "\AerialScrew\model\Screw.p3d";
         class Library {
-            libTextDesc = "A famous contraption by Leonardo Da Vinci!";
+            libTextDesc = "A famous contraption made by Leonardo Da Vinci!";
         };
         class MFD{};
 		class TransportBackpacks{};
