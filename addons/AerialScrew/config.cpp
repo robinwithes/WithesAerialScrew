@@ -64,13 +64,13 @@ class CfgVehicles {
         //multiplier of back rotor force
         backRotorForceCoef = 1.0;
         transportSoldier = 0;
-        startDuration = 8;
+        startDuration = 14;
         cargoCanEject = 1; 
         driverCanEject = 1; 
-        mainRotorSpeed = 0.4;
+        mainRotorSpeed = 0.36;
         precisegetinout = 0;
         helmetMountedDisplay = 0;
-        getInRadius = 15;
+        getInRadius = 17;
         driverAction = "Withes_Screw_Pilot";
 		driverInAction = "Withes_Screw_Pilot";
         maximumLoad = 1000;
