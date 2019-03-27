@@ -47,6 +47,9 @@ class CfgMovesMaleSdr: CfgMovesBasic
 class CfgVehicles {
     class Heli_Light_01_base_F;
     class ViewPilot;
+    class CargoTurret;
+    class Turrets;
+
     class Withes_Screw: Heli_Light_01_base_F {
         armor = 200;
         altFullForce = 900; /// in what height do the engines still have full thrust
@@ -63,7 +66,6 @@ class CfgVehicles {
         cyclicForwardForceCoef = 1.0;
         //multiplier of back rotor force
         backRotorForceCoef = 1.0;
-        transportSoldier = 0;
         startDuration = 14;
         cargoCanEject = 1; 
         driverCanEject = 1; 
@@ -75,10 +77,18 @@ class CfgVehicles {
 		driverInAction = "Withes_Screw_Pilot";
         maximumLoad = 1000;
         scope = 2;
+        transportSoldier = 0;
         author = "Robin Withes";
         _generalMacro = "Withes_Screw";
         displayname = "Aerial Screw";
         model = "\AerialScrew\model\Screw.p3d";
+        memoryPointsGetInCargo = "pos cargo";		/// on what memory points should the cargo get in the heli
+		memoryPointsGetInCargoDir = "pos cargo dir";/// what is the direction of the cargo facing during get in animation (and opposite for get out)
+        memoryPointsGetInDriver = "pos cargo";		/// on what memory points should the cargo get in the heli
+		memoryPointsGetInDriverDir = "pos cargo dir";/// what is the direction of the cargo facing during get in animation (and opposite for get out)
+        cargoIsCoDriver[] = {0, 0}; 				/// the cargo don't utilize some special memory points to get in
+        hideWeaponsCargo = 1;						/// this makes the poses easier and adds some performance gain because the proxies don't need to be drawn
+        cargoProxyIndexes[] = {1,2,3};		/// what indexes does regular cargo sit on
         class Library {
             libTextDesc = "A famous contraption made by Leonardo Da Vinci!";
         };
@@ -86,7 +96,6 @@ class CfgVehicles {
 		class TransportBackpacks{};
 		class TransportItems{};
         class TransportWeapons{};
-        class Turrets{};
         class ViewPilot: ViewPilot
 		{
 			initFov=1.4;
@@ -99,5 +108,35 @@ class CfgVehicles {
             minAngleY = 0;
             maxAngleY = 360;
 		};
+
+        class Turrets: Turrets										/// just a copilot seat as a turret to enable taking the controls
+		{
+			class CargoTurret_01: CargoTurret 						/// position for Firing from Vehicles
+			{
+				gunnerAction 				= "Withes_Screw_Pilot";
+				gunnerCompartments 			= "Compartment2";		/// gunner is not able to switch seats
+				memoryPointsGetInGunner 	= "pos cargo";		/// specific memory points to allow choice of position
+				memoryPointsGetInGunnerDir 	= "pos cargo dir";	/// direction of get in action
+				gunnerName 					= "Slave 1";	/// name of the position in the Action menu
+				proxyIndex 					= 1;					/// what cargo proxy is used according to index in the model
+				maxElev 					= 15;					/// what is the highest possible elevation of the turret
+				minElev 					= -25;					/// what is the lowest possible elevation of the turret
+				maxTurn 					= 45;					/// what is the left-most possible turn of the turret
+				minTurn 					= -15;					/// what is the right-most possible turn of the turret
+				isPersonTurret 				= 0;					/// enables firing from vehicle functionality
+				ejectDeadGunner 			= 1;					/// seatbelts included
+			};
+            class CargoTurret_02: CargoTurret_01
+            {
+                gunnerName 					= "Slave 2";	/// name of the position in the Action menu
+                proxyIndex 					= 2;					/// what cargo proxy is used according to index in the model
+            };
+            class CargoTurret_03: CargoTurret_01
+            {
+                gunnerName 					= "Slave 3";	/// name of the position in the Action menu
+                proxyIndex 					= 3;					/// what cargo proxy is used according to index in the model
+            };
+		};
+
     };
 };
