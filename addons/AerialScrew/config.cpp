@@ -102,11 +102,11 @@ class CfgVehicles {
 			minFov=0.60000002;
 			maxFov=1;
             initAngleX = 0;
-            minAngleX = -30;
-            maxAngleX = 30;
-            initAngleY = 180;
-            minAngleY = 0;
-            maxAngleY = 360;
+            minAngleX = -40;
+            maxAngleX = 40;
+            initAngleY = 0;
+            minAngleY = -100;
+            maxAngleY = 100;
 		};
 
         class Turrets: Turrets										/// just a copilot seat as a turret to enable taking the controls
