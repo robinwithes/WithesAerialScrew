@@ -67,7 +67,7 @@ class CfgVehicles {
         startDuration = 14;
         cargoCanEject = 1; 
         driverCanEject = 1; 
-        mainRotorSpeed = 0.36;
+        mainRotorSpeed = 0.43;
         precisegetinout = 0;
         helmetMountedDisplay = 0;
         getInRadius = 17;
