@@ -67,8 +67,8 @@ class CfgVehicles {
         //multiplier of back rotor force
         backRotorForceCoef = 1.0;
         startDuration = 14;
-        cargoCanEject = 1; 
-        driverCanEject = 1; 
+        cargoCanEject = 1;
+        driverCanEject = 1;
         mainRotorSpeed = 0.43;
         precisegetinout = 0;
         helmetMountedDisplay = 0;
@@ -126,6 +126,7 @@ class CfgVehicles {
 				minTurn 					= -15;					/// what is the right-most possible turn of the turret
 				isPersonTurret 				= 0;					/// enables firing from vehicle functionality
 				ejectDeadGunner 			= 1;					/// seatbelts included
+                canEject = 1;
 			};
             class screw_seat_2: screw_seat_1
             {
@@ -138,6 +139,5 @@ class CfgVehicles {
                 proxyIndex 					= 3;					/// what cargo proxy is used according to index in the model
             };
 		};
-
     };
 };
