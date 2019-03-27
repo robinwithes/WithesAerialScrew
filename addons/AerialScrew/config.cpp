@@ -111,7 +111,7 @@ class CfgVehicles {
 
         class Turrets: Turrets										/// just a copilot seat as a turret to enable taking the controls
 		{
-			class CargoTurret_01: CargoTurret 						/// position for Firing from Vehicles
+			class screw_seat_1: CargoTurret 						/// position for Firing from Vehicles
 			{
 				gunnerAction 				= "Withes_Screw_Pilot";
 				gunnerCompartments 			= "Compartment2";		/// gunner is not able to switch seats
@@ -126,12 +126,12 @@ class CfgVehicles {
 				isPersonTurret 				= 0;					/// enables firing from vehicle functionality
 				ejectDeadGunner 			= 1;					/// seatbelts included
 			};
-            class CargoTurret_02: CargoTurret_01
+            class screw_seat_2: screw_seat_1
             {
                 gunnerName 					= "Slave 2";	/// name of the position in the Action menu
                 proxyIndex 					= 2;					/// what cargo proxy is used according to index in the model
             };
-            class CargoTurret_03: CargoTurret_01
+            class screw_seat_3: screw_seat_1
             {
                 gunnerName 					= "Slave 3";	/// name of the position in the Action menu
                 proxyIndex 					= 3;					/// what cargo proxy is used according to index in the model
