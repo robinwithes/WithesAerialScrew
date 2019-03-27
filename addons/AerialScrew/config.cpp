@@ -47,7 +47,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 class CfgVehicles {
     class Heli_Light_01_base_F;
     class ViewPilot;
-    class CargoTurret;
+    class MainTurret;
     class Turrets;
 
     class Withes_Screw: Heli_Light_01_base_F {
@@ -111,8 +111,9 @@ class CfgVehicles {
 
         class Turrets: Turrets										/// just a copilot seat as a turret to enable taking the controls
 		{
-			class screw_seat_1: CargoTurret 						/// position for Firing from Vehicles
+			class screw_seat_1: MainTurret 						/// position for Firing from Vehicles
 			{
+                proxyType = "CPGunner";
 				gunnerAction 				= "Withes_Screw_Pilot";
 				gunnerCompartments 			= "Compartment2";		/// gunner is not able to switch seats
 				memoryPointsGetInGunner 	= "pos cargo";		/// specific memory points to allow choice of position
